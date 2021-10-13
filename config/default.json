@@ -1,0 +1,4 @@
+{
+    "mongoURI": "mongodb+srv://asifmarble:asifmarble@cluster0.9g3oa.mongodb.net/pricelistdb?retryWrites=true&w=majority",
+    "jwtSecret": "mysecrettoken"
+}
