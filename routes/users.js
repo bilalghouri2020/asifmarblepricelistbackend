@@ -64,7 +64,7 @@ router.post('/', [
   try {
     let user = await User.findOne({ email });
     if (user) {
-      res.json({ errors: [{ msg: 'User already exists...' }] });
+      res.json({ errors: [{ msg: 'User already exists...', status: 1 }] });
       return;
     }
 
@@ -74,21 +74,13 @@ router.post('/', [
       email,
       password
     })
-
-
-
-
     const salt = await bcrypt.genSalt(10)
     user.password = await bcrypt.hash(password, salt);
     const response = await user.save();
     console.log(response);
 
-
-
   } catch (err) {
-
     console.log(err);
-
   }
 })
 
